@@ -13,7 +13,7 @@ export default class EmailClient {
   async init() {
     this.email = new Email({
       message: {
-        from: `"VictorBot 👻" <${this.sender ?? 'victor@santabot.com'}>`,
+        from: `"VictorBot 👻" <${this.sender ?? process.env.MAIL_USERNAME}>`,
       },
       send: true,
       preview: false,
