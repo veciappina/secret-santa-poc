@@ -10,7 +10,7 @@ const players: Player[] = [
   { name: 'Maigualida', email: 'maiguarod@gmail.com' },
   { name: 'Yenissei', email: 'yenisseid@gmail.com' },
   { name: 'Ricardo', email: 'rjdiaz154@gmail.com' },
-  { name: 'Fernanda', email: 'rjdiaz154@gmail.com' },
+  { name: 'Fernanda', email: 'fernandagtg_bh@outlook.com' },
 ];
 
 const secretSanta = new SecretSanta(players);
