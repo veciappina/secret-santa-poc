@@ -3,7 +3,7 @@ import getRandomNumber from '../utils/getRandomNumber';
 import EmailClient from './EmailClient';
 
 export default class SecretSanta {
-  constructor(private players: Player[]) {}
+  constructor(private players: Player[], private debugMode = false) {}
 
   getCircleCount(count = 0, player?: Player, initialPlayer?: Player): number {
     if (player === undefined) {
@@ -79,6 +79,11 @@ export default class SecretSanta {
   }
 
   async notify(): Promise<void> {
+    if (this.debugMode) {
+      console.log(this.getCircleChain());
+      return;
+    }
+
     const emailClient = new EmailClient();
     await emailClient.init();
     const promises: Promise<void>[] = this.players.map(emailClient.sendInfoToPlayer);
