@@ -3,7 +3,7 @@ import getRandomNumber from '../utils/getRandomNumber';
 import EmailClient from './EmailClient';
 
 export default class SecretSanta {
-  constructor(private players: Player[], private debugMode = false) {}
+  constructor(private players: Player[], private debugMode = true) {}
 
   getCircleCount(count = 0, player?: Player, initialPlayer?: Player): number {
     if (player === undefined) {
